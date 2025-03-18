@@ -11,7 +11,7 @@ func ServerDataBase() {
 	var database config.DataBase
 	server := database.Connect()
 	user := user.User{
-		ID:       1,
+		ID:       3,
 		UserName: "Samuel",
 		Password: "123",
 	}
