@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/samuelmaxi/back-go-barbershop-core/backend"
+)
 
 func main() {
-	fmt.Println("Hello Word!")
+	backend.ServerDataBase()
 }
