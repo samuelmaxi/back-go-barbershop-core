@@ -1,22 +1,19 @@
-package backend
+package main
 
 import (
 	"fmt"
-
-	"github.com/samuelmaxi/back-go-barbershop-core/backend/config"
-	"github.com/samuelmaxi/back-go-barbershop-core/backend/utils/user"
 )
 
-func ServerDataBase() {
-	var database config.DataBase
-	server := database.Connect()
-	user := user.User{
-		ID:       3,
-		UserName: "Samuel",
-		Password: "123",
-	}
+func main() {
+	// var database config.DataBase
+	// // server := database.Connect()
+	// // // user := user.User{
+	// // // 	ID:       4,
+	// // // 	UserName: "Samuel",
+	// // // 	Password: "123",
+	// // // }
 
-	user.Register(server)
+	// // // user.Register(server)
 
 	fmt.Println("Hello word back end")
 }
