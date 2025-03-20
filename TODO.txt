@@ -1,3 +1,11 @@
 # TO DO
-  - Melhorar o retorno da funcao `u.Register`, tem que retornar algo e error para ser validado posteriomente
   - Retonar no JSON (200) alguma mensagem de registro do USUARIO no banco
+  - Padronizar as mensagens de retorno do JSON
+    - ERROR
+    - RETORNO DE DADOS
+
+
+# DOING
+  - Melhorar o retorno da funcao `u.Register`, tem que retornar algo e error para ser validado posteriomente
+    - Colocar mais prints
+    - Fazer retornar o erro no JSON
