@@ -3,6 +3,9 @@
   - Padronizar as mensagens de retorno do JSON
     - ERROR
     - RETORNO DE DADOS
+  - Criar diagrama
+    - Estrutura geral de como deve ficar
+    - Montar uma estragia e explicar cada parte do projeto
 
 
 # DOING
