@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,10 +11,9 @@ import (
 
 func RegisterUser(db *gorm.DB) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-
 		var u user.User
-		fmt.Println("PASSOU PELA API")
 		err := ctx.ShouldBindJSON(&u)
+
 		if err != nil {
 			ctx.JSON(http.StatusBadRequest, gin.H{
 				"error": err.Error(),
@@ -22,7 +21,13 @@ func RegisterUser(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		fmt.Println("PASSOU PELA API")
-		u.Register(db)
+		_, err = u.Register(db)
+		if err != nil {
+			log.Fatal(err)
+			ctx.JSON(http.StatusConflict, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
 	}
 }

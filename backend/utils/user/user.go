@@ -8,7 +8,7 @@ import (
 )
 
 type User struct {
-	ID       int    `json:"id" gorm:"primaryKey"`
+	ID       int    `json:"id" gorm:"unique;primaryKey;autoIncrement"`
 	UserName string `json:"userName"`
 	Password string `json:"password"`
 }
@@ -21,7 +21,7 @@ func (u *User) hashPassword() (string, error) {
 	return string(bytes), err
 }
 
-func (u *User) Register(db *gorm.DB) {
+func (u *User) Register(db *gorm.DB) (int, error) {
 	db.AutoMigrate(&User{})
 	hash, err := u.hashPassword()
 	u.Password = hash
@@ -29,6 +29,17 @@ func (u *User) Register(db *gorm.DB) {
 		panic(err)
 	}
 
-	db.Create(u)
+	result := db.Create(&u)
+	if result.Error != nil {
+		return 0, result.Error
+	}
+
+	fmt.Println("\n ")
+	fmt.Println("ERRO DO RETORNO DA CRIACAO: ", result.Error)
+	fmt.Println("\n ")
+	fmt.Println("MENSAGEM DO RETORNO DA CRIACAO: ", result.RowsAffected)
+	fmt.Println("\n ")
+
 	fmt.Println("Usuario registrado com sucesso: ", u)
+	return int(result.RowsAffected), nil
 }
