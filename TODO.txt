@@ -3,12 +3,12 @@
   - Padronizar as mensagens de retorno do JSON
     - ERROR
     - RETORNO DE DADOS
-  - Criar diagrama
-    - Estrutura geral de como deve ficar
-    - Montar uma estragia e explicar cada parte do projeto
 
 
 # DOING
   - Melhorar o retorno da funcao `u.Register`, tem que retornar algo e error para ser validado posteriomente
     - Colocar mais prints
     - Fazer retornar o erro no JSON
+  - Criar diagrama (https://excalidraw.com/#room=c37b513bd08b6a1d37c8,KieO_Rxcs43jjNM5YTL_5Q)
+    - Estrutura geral de como deve ficar
+    - Montar uma estragia e explicar cada parte do projeto
