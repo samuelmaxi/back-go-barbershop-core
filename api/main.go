@@ -1,12 +1,12 @@
-package main
+package api
 
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/samuelmaxi/back-go-barbershop-core/api/handlers"
-	"github.com/samuelmaxi/back-go-barbershop-core/backend/config"
+	"github.com/samuelmaxi/back-go-barbershop-core/config"
 )
 
-func main() {
+func InitAPI() {
 	router := gin.Default()
 	var database config.DataBase
 	db := database.Connect()

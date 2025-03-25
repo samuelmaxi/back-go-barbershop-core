@@ -1,5 +1,7 @@
 package main
 
+import "github.com/samuelmaxi/back-go-barbershop-core/api"
+
 func main() {
-	// backend.ServerDataBase()
+	api.InitAPI()
 }
