@@ -1,8 +1,11 @@
 # TO DO
-  - Retonar no JSON (200) alguma mensagem de registro do USUARIO no banco
   - Padronizar as mensagens de retorno do JSON
     - ERROR
     - RETORNO DE DADOS
+  - Criar metodo GET
+  - Validar usuario(login)
+  - Adicionar mais atributos ao usuario
+  - Definir roles
 
 
 # DOING
@@ -12,3 +15,8 @@
   - Criar diagrama (https://excalidraw.com/#room=c37b513bd08b6a1d37c8,KieO_Rxcs43jjNM5YTL_5Q)
     - Estrutura geral de como deve ficar
     - Montar uma estragia e explicar cada parte do projeto
+
+
+#DONE
+  - Retonar no JSON (200) alguma mensagem de registro do USUARIO no banco
+  - Melhorado estrutura de paginas (config)
