@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/samuelmaxi/back-go-barbershop-core/backend/utils/user"
+	"github.com/samuelmaxi/back-go-barbershop-core/backend/models/user"
 	"gorm.io/gorm"
 )
 
@@ -29,5 +29,10 @@ func RegisterUser(db *gorm.DB) gin.HandlerFunc {
 			})
 			return
 		}
+
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "User registered successfully",
+			"status":  200,
+		})
 	}
 }
