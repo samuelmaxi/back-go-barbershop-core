@@ -7,6 +7,10 @@ import (
 	"gorm.io/gorm"
 )
 
+type Authentication interface {
+	register(db *gorm.DB) (int, error)
+}
+
 type User struct {
 	gorm.Model
 	ID       int    `json:"id" gorm:"unique;primaryKey;autoIncrement"`
@@ -22,7 +26,7 @@ func (u *User) hashPassword() (string, error) {
 	return string(bytes), err
 }
 
-func (u *User) Register(db *gorm.DB) (int, error) {
+func (u User) register(db *gorm.DB) (int, error) {
 	db.AutoMigrate(&User{})
 	hash, err := u.hashPassword()
 	u.Password = hash
@@ -43,4 +47,8 @@ func (u *User) Register(db *gorm.DB) (int, error) {
 
 	fmt.Println("Usuario registrado com sucesso: ", u)
 	return int(result.RowsAffected), nil
+}
+
+func Register(a Authentication, db *gorm.DB) (int, error) {
+	return a.register(db)
 }

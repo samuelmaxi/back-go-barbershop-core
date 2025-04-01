@@ -21,7 +21,7 @@ func RegisterUser(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		_, err = u.Register(db)
+		_, err = user.Register(u, db)
 		if err != nil {
 			log.Fatal(err)
 			ctx.JSON(http.StatusConflict, gin.H{
